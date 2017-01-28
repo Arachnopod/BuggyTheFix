@@ -1,8 +1,8 @@
 # BuggyTheFix
 Hi all, 
-This is the fixed code for the vulnerabilities given in the previous weeks via BuggyTheApp. We call it BuggyTheFix, which address the following issues:
-Week #2:
-•	Fixing#1 the SQL Injection in searchpass() method code in DBclass.java
+This is the fixed code for the vulnerabilities given in the previous weeks via BuggyTheApp. We call it BuggyTheFix, which address the following issues:<br>
+<ol><li>Week #2:</li>
+<ul><li>Fixing#1 the SQL Injection in searchpass() method code in DBclass.java</li></ol>
 
 Week#3:
 •	Fixing#2 the Unnecessary requested permissions in AndroidManifest.xml. 
