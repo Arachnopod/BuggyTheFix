@@ -36,6 +36,7 @@ public class welcome extends Activity {
 
     public void copyFile(View v) throws IOException {
         try {
+            //Fixing#5 : external storage permission
             //File backupDB = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "usersinfo_BACKUP.db");
             File backupDB = new File(getApplicationInfo().dataDir, "usersinfo_BACKUP.db");
             File workingDB = getApplicationContext().getDatabasePath("usersinfo.db");

@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.database.sqlite.SQLiteStatement;
 
 /**
  * Created by AndroidHPE on 1/28/2017.
@@ -30,12 +31,19 @@ public class DBclass extends SQLiteOpenHelper {
     }
 
 
-    public boolean newuser(String newuserquery)
+    public boolean newuser(String newuserquery, String namestr, String emailstr, String usernamestr, String passconfstr)
     {
         db= this.getWritableDatabase();
         try
         {
-            db.execSQL(newuserquery);
+
+            SQLiteStatement statement=db.compileStatement(newuserquery);
+            statement.bindString(1, namestr);
+            statement.bindString(2, emailstr);
+            statement.bindString(3, usernamestr);
+            statement.bindString(4, passconfstr);
+            statement.executeInsert();
+
         } catch (SQLException e)
         {
             db.close();
@@ -49,7 +57,7 @@ public class DBclass extends SQLiteOpenHelper {
     public boolean searchpass(String loginUsername, String loginpass)
     {
         db= this.getReadableDatabase();
-        //fixing the sqlinjection
+        // Fixing#1: fixing the sqlinjection
         // String searchquery="select * from "+DATABASE_TABLE+" where username ='"+loginUsername+"' and password='"+loginpass+"';";
         //Cursor cursor=db.rawQuery(searchquery,null);
         Cursor cursor= db.rawQuery("select * from "+DATABASE_TABLE+" where "+ "username=? and password=?", new String [] {loginUsername, loginpass});

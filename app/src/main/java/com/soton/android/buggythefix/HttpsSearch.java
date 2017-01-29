@@ -78,6 +78,7 @@ public abstract class HttpsSearch extends AsyncTask<String, Void, Object> {
         //KeyPinStore keystore = KeyPinStore.getInstance();
 
         try {
+            //Fixing#7
             //The Solution to week four SSl Certificate pinning is starting from this line, please reference to the link :
             // https://developer.android.com/training/articles/security-ssl.html
             // Load CAs from an InputStream

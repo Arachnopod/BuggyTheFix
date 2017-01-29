@@ -22,6 +22,7 @@ public class broadcaster extends IntentService {
             Intent broadcastintent = new Intent();
             broadcastintent.setAction("com.soton.android.bugysqliteapp");
             broadcastintent.putExtra("Message", "This is always running service");
+            //Fixing#4: adding sample permission, you can craft your own, we used sms send permission
             sendBroadcast(broadcastintent,"android.permission.SEND_SMS");
             try
             {

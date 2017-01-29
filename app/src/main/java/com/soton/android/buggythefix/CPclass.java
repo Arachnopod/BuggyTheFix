@@ -44,7 +44,8 @@ public class CPclass extends ContentProvider {
     public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder)
     {
         db = dBclass.getReadableDatabase();
-        //Old buggy code
+        //Fixing#6 inadequate protection of a Content Provider,
+        // this basically an SQL injection attack on the Query() method that it originally related to the DBclass instance.
         //Cursor cursor= db.query(DBclass.DATABASE_TABLE,projection,selection,selectionArgs,null,null,sortOrder);
         // new code assuming we query for a username and password
         Cursor cursor= db.query(DBclass.DATABASE_TABLE,null,"username=? AND password=?",selectionArgs,null,null,sortOrder);

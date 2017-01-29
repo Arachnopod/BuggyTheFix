@@ -43,10 +43,14 @@ public class signup extends Activity {
                 passmsg.show();
             }else if (!usernamestr.isEmpty() && !passstr.isEmpty() && !namestr.isEmpty())
             {
+                //bonus fixing
                 String newuserQuery="INSERT INTO "+ DATABASE_TABLE +" (name, email, username, password)" +
-                        "VALUES ('"+namestr+"', '"+emailstr+"', '"+usernamestr+"', '"+passconfstr+"');";
+                        "VALUES (?,?,?,?);";
 
-                if(mydb.newuser(newuserQuery))
+                //String newuserQuery="INSERT INTO "+ DATABASE_TABLE +" (name, email, username, password)" +
+                //        "VALUES ('"+namestr+"', '"+emailstr+"', '"+usernamestr+"', '"+passconfstr+"');";
+
+                if(mydb.newuser(newuserQuery,namestr,emailstr,usernamestr,passconfstr))
                 {
                     Toast registered=Toast.makeText(signup.this, "Thank you, you can log in now", Toast.LENGTH_SHORT);
                     registered.show();
