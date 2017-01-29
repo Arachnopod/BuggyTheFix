@@ -13,7 +13,7 @@ This is the fixed code for the vulnerabilities given in the previous weeks via B
 <ul><li>Fixing#5 external storage permission in welcome.java class and AndroidManifest.xml. By fixing the code in the copyfile() method. 
 <li>Fixing#6 inadequate protection of a Content Provider, this basically an SQL injection attack on the Query() method that it originally related to the DBclass instance. 
 <li>Fixing#7 Certificate pinning in the search on the HttpsSearch.java . we provided a certificate that can be downloaded from google from this link: https://pki.google.com/ </ul></ol><br>
-In order to find all the fixing, please click on the app folder on the left in Android studio and then go to Edit menu and then go to Find sub menue and then click on Find in Path, in the search box write Fixing, the preview tab will show all the fixxing the BuggyTheFix.
+In order to find all the fixing, please click on the "app" folder on the left in Android studio and then go to "Edit" menu and then go to "Find" sub menu and then click on "Find in Path",then in the search box, write "Fixing", the preview tab will show all the fixing in BuggyTheFix.
 <br>Best Regards
 <br> MOOC Team
 
